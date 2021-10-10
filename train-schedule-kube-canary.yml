@@ -17,7 +17,7 @@ spec:
 apiversion: apps/v1
 kind: Deployment
 metadata:
-  name: train-schedule-deployment
+  name: train-schedule-deployment-canary
   labels:
     app: train-schedule
 spec:
@@ -40,7 +40,7 @@ spec:
         livenessProbe:
           httpGet:
             path: /
-            port:8080
+            port: 8080
           initialDelaySeconds: 15
           timeoutSeconds: 1
           periodSeconds: 10
